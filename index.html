@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    
+
+
+
+    <title>Registeration form</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registeration</h1>
+      <div class="row">
+        <form class="col s6" id="myForm" novalidate>
+          <div class="row">
+            <div class="input-field col s6">
+              <label for="firstName">First Name</label>
+              <input type="text" name="First Name" id="firstName" onfocusout="validateFirstName()"/>
+              <span class="error-text"></span>
+            </div>
+            <div class="input-field col s6">
+              <label for="lastName">Last Name</label>
+              <input type="text" name="Last Name" id="lastName" onfocusout="validateLastName()"/>
+              <span class="error-text"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <label for="email">Email</label>
+              <input type="email" name="Email" id="email" onfocusout="validateEmail()"/>
+              <span class="error-text"></span>
+            </div>
+          </div>
+          <button class="btn waves-effect waves-light" type="submit">Register</button>
+          <button class="btn waves-effect waves" type="reset">Reset</button>
+
+
+        </form>
+        <div class="col s6">
+         
+            <div class="container">
+                <div id="output" >
+            
+                  <div class="user">
+                    <div class="text">
+                      <h5>FirstName LastName</h5>
+                      <small>email@mail.com</small>
+                    </div>
+                    <div class="buttons">
+                      <button class="btn orange darken-2">change</button>
+                      <button class="btn red accent-4">delete</button>
+                    </div>
+                  </div>
+
+                                 
+                              
+                </div>
+              </div>
+              
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

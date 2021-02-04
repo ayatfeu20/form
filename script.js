@@ -25,8 +25,6 @@ const renderUsers = () => {
         <h5>${user.firstName} ${user.lastName}</h5>
         <small>${user.email}</small>
       </div>
-      <div class="buttons">
-        <button class="btn orange darken-2">change</button>
         <button class="btn red accent-4">delete</button>
       </div>
     </div>
@@ -35,10 +33,6 @@ const renderUsers = () => {
     output.innerHTML += html
   })
 }
-
-
-
-
 
 
 
@@ -59,6 +53,7 @@ form.addEventListener('submit', function(event) {
     loadingBar.className = 'indeterminate';
     loader.appendChild(loadingBar);
     container.appendChild(loader);
+    
     setTimeout(function() {
       const loaderDiv = document.querySelector('div.progress');
       const panel = document.createElement('div');
@@ -94,20 +89,27 @@ form.addEventListener('submit', function(event) {
         
       }    
     
-    })   
+    })  
+
+     
     
 
+    output.addEventListener('click', function (event) {
 
-
-
-
-
-
+      if(event.target.classList.contains('btn red accent-4'))
+      deleteUser(event.target.parentNode.id)
   
-
+  })
   
-  
+  const deleteUser = id => {
+    users = users.filter(user => user.id != id);
+    listUsers(users);
+  }
 
+    
+    
+    
+   
 
 // Validators
 function validateFirstName() {
@@ -176,6 +178,7 @@ function containsCharacters (email){
       }
     }
 
+    
 
     
     
